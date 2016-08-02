@@ -1,0 +1,30 @@
+{
+  "name": "hackernews-choo",
+  "version": "1.0.0",
+  "description": "Hacker News Clone using Choo",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo index.js -d dist -P --serve=dist/index.js --live --open -- -t babelify -t sheetify/transform",
+    "build": "mkdir -p dist && browserify index.js -o dist/index.js -t babelify -t sheetify/transform",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "author": "Kevin Neff",
+  "license": "MIT",
+  "dependencies": {
+    "approximate-time": "0.0.1",
+    "choo": "^3.2.0",
+    "ent": "^2.2.0",
+    "firebase": "2.3.1",
+    "sanitize-html": "^1.12.0",
+    "sheetify": "^5.0.2",
+    "tachyons": "^4.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "budo": "^8.3.0",
+    "gh-pages": "^0.11.0",
+    "loaders.css": "^0.1.2"
+  }
+}
