@@ -6,7 +6,7 @@
   "scripts": {
     "start": "budo index.js -d dist -P --serve=dist/index.js --live --open -- -t babelify -t sheetify/transform",
     "build": "mkdir -p dist && browserify index.js -o dist/index.js -t babelify -t sheetify/transform",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && surge dist hackernews-choo.surge.sh"
   },
   "author": "Kevin Neff",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "budo": "^8.3.0",
-    "gh-pages": "^0.11.0",
-    "loaders.css": "^0.1.2"
+    "loaders.css": "^0.1.2",
+    "surge": "^0.18.0"
   }
 }
