@@ -2,6 +2,7 @@ const h = require('choo/html')
 const StoryItem = require('../components/item')
 const Loading = require('../components/loading')
 const CommentList = require('../components/comments/list')
+const Root = require('../components/root')
 
 module.exports = function Item (state, prevState, dispatch) {
   const {
@@ -40,9 +41,9 @@ module.exports = function Item (state, prevState, dispatch) {
     dispatch('fetchComments', item.id)
   }
 
-  return h`<div class="silver">
+  return Root(h`<div class="silver">
       <div class="ph2 ph4-m ph4-ns mt2 mt2-ns mt2-m mt2-l">
         ${Content}
       </div>
-  </div>`
+  </div>`)
 }

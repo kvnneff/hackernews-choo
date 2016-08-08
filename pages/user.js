@@ -2,20 +2,21 @@ const h = require('choo/html')
 const sanitizeHTML = require('sanitize-html')
 const approx = require('approximate-time')
 const Loading = require('../components/loading')
+const Root = require('../components/root')
 
-const User = (params, state, dispatch) => {
-  const { userId } = params
+const User = (state, prevState, dispatch) => {
+  const { userId } = state.params
   const { user } = state
   const aboutEl = h`<span></span>`
 
   if (!user || userId !== user.id) {
-    dispatch('fetchUser', { userId })
+    dispatch('fetchUser', userId)
     return Loading()
   }
 
   if (user.about) aboutEl.innerHTML = sanitizeHTML(user.about)
 
-  return h`<div class="helvetica pa3 mw6 mw7-ns center cf">
+  return Root(h`<div class="helvetica ph3 ph4-ns center cf">
     <article class="">
       <h2 class="mb0">${user.id}</h2>
       <div class="f6">
@@ -43,7 +44,7 @@ const User = (params, state, dispatch) => {
         ${aboutEl}</div>
       </div>` : ''}
     </article>
-  </div>`
+  </div>`)
 }
 
 module.exports = User

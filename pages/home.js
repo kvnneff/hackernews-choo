@@ -1,6 +1,7 @@
 const h = require('choo/html')
 const ItemList = require('../components/item-list/list')
 const Loading = require('../components/loading')
+const Root = require('../components/root')
 
 module.exports = function Home (state, prevState, dispatch) {
   const {
@@ -56,8 +57,8 @@ module.exports = function Home (state, prevState, dispatch) {
     })
   }
 
-  return h`<div class="silver" onload=${loadStories}>
-    <section class="ph3 ph4-m ph4-ns">
+  return Root(h`<div class="silver" onload=${loadStories}>
+    <section class="ph3 ph4-ns">
       <div>
         ${isLoadingItems
           ? Loading({ text: 'Fetching Stories...' })
@@ -66,5 +67,5 @@ module.exports = function Home (state, prevState, dispatch) {
     </section>
     ${isLoadingItems ? '' : moreLink()}
     ${isLoadingItems ? '' : footer()}
-  </div>`
+  </div>`)
 }

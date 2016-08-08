@@ -1,5 +1,5 @@
 const Test = require('tape')
-const Loading = require('../components/loading')
+const Loading = require('../../components/loading')
 
 Test('Loading Component', (t) => {
   const test = t.test

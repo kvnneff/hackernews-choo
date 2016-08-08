@@ -24,4 +24,4 @@ app.router(route => [
 ])
 
 const tree = app.start()
-document.getElementsByTagName('main')[0].appendChild(tree)
+document.body.appendChild(tree)

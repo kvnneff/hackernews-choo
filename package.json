@@ -4,10 +4,10 @@
   "description": "Hacker News Clone using Choo",
   "main": "index.js",
   "scripts": {
-    "start": "budo index.js -d dist -P --serve=index.js --live --open -- -t yo-yoify -t sheetify/transform -t babelify",
-    "build": "mkdir -p dist && browserify index.js -o dist/index.js -t yo-yoify -t babelify -t sheetify/transform",
+    "start": "budo index.js --css dist/index.css -P --serve=index.js --live --open -- -t yo-yoify -t sheetify/transform -t babelify",
     "deploy": "npm run build && surge dist hackernews-choo.surge.sh",
-    "test-local": "zuul --local 8080 -- test/index.js "
+    "build": "mkdir -p dist && browserify index.js -o dist/index.js -t yo-yoify -t sheetify/transform -t babelify -p [css-extract -o dist/bundle.css] index.js",
+    "test-local": "zuul --local 8080 -- test/**/*.js "
   },
   "author": "Kevin Neff",
   "license": "MIT",
@@ -25,6 +25,7 @@
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "budo": "^8.3.0",
+    "css-extract": "^1.1.1",
     "loaders.css": "^0.1.2",
     "surge": "^0.18.0",
     "tape": "^4.6.0",
