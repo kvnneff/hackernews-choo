@@ -41,7 +41,7 @@ module.exports = function Item (state, prevState, dispatch) {
   }
 
   return h`<div class="silver">
-      <div class="ph3 ph5-m ph5-ns mt3 mt4-ns mt4-m mt4-l">
+      <div class="ph2 ph4-m ph4-ns mt2 mt2-ns mt2-m mt2-l">
         ${Content}
       </div>
   </div>`

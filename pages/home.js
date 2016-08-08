@@ -25,6 +25,7 @@ module.exports = function Home (state, prevState, dispatch) {
     dispatch('fetchItemsByPage', pageNumber)
     isLoadingItems = true
     window.scrollTo(0, 0)
+    return
   }
 
   function moreLink () {
@@ -56,7 +57,7 @@ module.exports = function Home (state, prevState, dispatch) {
   }
 
   return h`<div class="silver" onload=${loadStories}>
-    <section class="ph3 ph5-m ph5-ns">
+    <section class="ph3 ph4-m ph4-ns">
       <div>
         ${isLoadingItems
           ? Loading({ text: 'Fetching Stories...' })

@@ -4,8 +4,8 @@
   "description": "Hacker News Clone using Choo",
   "main": "index.js",
   "scripts": {
-    "start": "budo index.js -d dist -P --serve=dist/index.js --live --open -- -t babelify -t sheetify/transform",
-    "build": "mkdir -p dist && browserify index.js -o dist/index.js -t babelify -t sheetify/transform",
+    "start": "budo index.js -d dist -P --serve=index.js --live --open -- -t yo-yoify -t sheetify/transform -t babelify",
+    "build": "mkdir -p dist && browserify index.js -o dist/index.js -t yo-yoify -t babelify -t sheetify/transform",
     "deploy": "npm run build && surge dist hackernews-choo.surge.sh",
     "test-local": "zuul --local 8080 -- test/index.js "
   },
