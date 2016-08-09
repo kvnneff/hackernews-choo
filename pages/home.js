@@ -34,21 +34,13 @@ module.exports = function Home (state, prevState, dispatch) {
       <div class="pv3 ph3 ph5-m ph5-ns">
         ${pageNumber > 1 ? previousLink() : ''}
         ${pageNumber > 1 ? h` | ` : ''}
-      <a href="/page/${ pageNumber + 1 }">More </a>
-      </div>`
+        <a href="/page/${ pageNumber + 1 }">More</a>
+      </div>
+    </div>`
   }
 
   function previousLink () {
     return h`<a href="/page/${ pageNumber - 1 }">Previous</a>`
-  }
-
-  function footer () {
-    return h`<footer class="bg-near-white pv3 w-100 bt b--light-gray">
-      <div class="tc f6 gray">
-        Built with <a class="link" href="https://github.com/yoshuawuyts/choo">Choo</a>
-        | <a class="link" href="https://github.com/kvnneff/hackernews-choo">Source</a>
-      </div>
-    </footer>`
   }
 
   if (currentItems.length > 0) {
@@ -66,6 +58,5 @@ module.exports = function Home (state, prevState, dispatch) {
       </div>
     </section>
     ${isLoadingItems ? '' : moreLink()}
-    ${isLoadingItems ? '' : footer()}
   </div>`)
 }

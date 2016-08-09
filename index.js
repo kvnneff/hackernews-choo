@@ -8,6 +8,7 @@ const hooks = {}
 
 sheetify('tachyons')
 sheetify('loaders.css')
+sheetify('./index.css', { global: true })
 
 hooks.onStateChange = (action, state) => { storage.save(state) }
 hooks.onError = err => { console.error(err) }

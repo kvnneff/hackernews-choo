@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+}
+
+a {
+  color: #006c71;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f00008;
+}
+
+pre {
+  overflow: auto;
+  max-width: 600px;
+  background: #f4f4f4;
+}
+
+.comment-list > li {
+  padding: 1rem;
+  margin: 2rem 0;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+}
+
+.comment-list > li:nth-child(even) {
+  background-color: #fefefe;
+}
