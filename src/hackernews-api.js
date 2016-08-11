@@ -40,6 +40,7 @@ const fetchItem = (itemId, cb) => {
 
 const fetchChildren = (story, cb) => {
   story.children = []
+  if (story.descendants === 0) return cb(null, story)
   let count = 0
 
   const trace = item => {

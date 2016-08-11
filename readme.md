@@ -1,6 +1,6 @@
 # hackernews-choo
 
-A Hacker News reader built with [Choo](https://github.com/yoshuawuyts/choo).
+A rough Hacker News reader built to experiment with [Choo](https://github.com/yoshuawuyts/choo).
 
 [View online](https://hackernews-choo.surge.sh).
 

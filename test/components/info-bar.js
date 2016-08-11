@@ -1,5 +1,5 @@
 const Test = require('tape')
-const InfoBar = require('../../components/info-bar')
+const InfoBar = require('../../src/components/info-bar')
 
 const itemFixture = () => {
   return {

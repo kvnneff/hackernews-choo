@@ -13,9 +13,11 @@ const Comment = state => {
   return h`<li class="comment pt3 navy">
     <span class="f6">
       <a href="/user/${item.by}" class="link">${item.by}</a>
-      ${timeAgo(item)}
+      <span>${timeAgo(item)}</span>
     </span>
-    ${commentBody}
+    <p>
+      ${commentBody}
+    </p>
     <ul class="list pl4">
       ${item.children ? item.children.map(child => {
         return Comment({ item: child })

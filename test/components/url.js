@@ -1,5 +1,5 @@
 const Test = require('tape')
-const URL = require('../../components/url')
+const URL = require('../../src/components/url')
 
 Test('URL Component', (t) => {
   const test = t.test
