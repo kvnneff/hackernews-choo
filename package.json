@@ -6,7 +6,7 @@
   "scripts": {
     "start": "budo src/index.js -P -s=index.js --live --open -- -t yo-yoify -t sheetify/transform -t babelify",
     "deploy": "npm run build && surge dist hackernews-choo.surge.sh",
-    "build": "mkdir -p dist && browserify src/index.js -o dist/index.js -t yo-yoify -t sheetify/transform -t babelify -p [css-extract -o dist/bundle.css] src/index.js",
+    "build": "mkdir -p dist && browserify src/index.js -o dist/index.js -t yo-yoify -t sheetify/transform -t babelify -g uglifyify -p [css-extract -o dist/bundle.css] src/index.js",
     "test-local": "zuul --local 8080 -- test/**/*.js "
   },
   "author": "Kevin Neff",
@@ -18,7 +18,8 @@
     "firebase": "2.3.1",
     "sanitize-html": "^1.12.0",
     "sheetify": "^5.0.2",
-    "tachyons": "^4.0.1"
+    "tachyons": "^4.0.1",
+    "loaders.css": "^0.1.2"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
@@ -26,7 +27,6 @@
     "browserify": "^13.0.1",
     "budo": "git://github.com/mattdesl/budo.git#9199226",
     "css-extract": "^1.1.1",
-    "loaders.css": "^0.1.2",
     "surge": "^0.18.0",
     "tape": "^4.6.0",
     "uglifyify": "^3.0.2",
