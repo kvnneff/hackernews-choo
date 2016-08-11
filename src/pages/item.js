@@ -32,7 +32,7 @@ module.exports = function Item (state, prevState, dispatch) {
 
   if (!Content) {
     const Story = StoryItem({ item, pollOptions, onLoad: fetchComments })
-    const Comments = comments ? CommentList(comments) : Loading({ text: 'Loading comments...' })
+    const Comments = comments ? CommentList({ comments }) : Loading({ text: 'Loading comments...' })
     Content = [ Story, Comments ]
   }
 
