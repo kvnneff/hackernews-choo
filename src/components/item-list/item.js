@@ -13,8 +13,8 @@ module.exports = function StoryItem (state) {
       <a class="link" href="${url}">
         ${item.title.replace(/\s([^\s<]+)\s*$/, '\u00A0$1')}
       </a>
-      ${domain}
-      ${InfoBar({ item })}
+      <span>${domain}</span>
+      <span>${InfoBar({ item })}</span>
     </td>
   </tr>`
 }

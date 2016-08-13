@@ -5,10 +5,10 @@ const InfoBar = state => {
   const item = state.item
 
   if (item.type !== 'story' && item.type !== 'poll') {
-    return h`<div class="f6">${timeAgo(item)}</div>`
+    return h`<div class="InfoBar f6">${timeAgo(item)}</div>`
   }
 
-  return h`<div class="f6">
+  return h`<div class="InfoBar f6">
     ${score(item)} | ${commentsLink(item)}
   </div>`
 }
