@@ -56,14 +56,4 @@ Test('ItemList-Item Component', (t) => {
 
     t.equal(infoEl.classList[0], 'InfoBar')
   })
-  //
-  // test('displays child comments', (t) => {
-  //   t.plan(2)
-  //   const item = itemFixture()
-  //   const comment = Item({ item })
-  //   const childItem = comment.children[2].children[0]
-  //
-  //   t.ok(childItem)
-  //   t.equal(childItem.tagName, 'LI')
-  // })
 })
