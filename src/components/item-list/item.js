@@ -7,7 +7,7 @@ module.exports = function StoryItem (state) {
   const url = item.url ? item.url : `/item/${item.id}`
   const domain = URL({ url })
 
-  return h`<tr class="">
+  return h`<tr class="StoryList-item">
     <td class="v-top pv2 f6 tr pr2">${index}.</td>
     <td class="v-top pv2 f6 f5-ns">
       <a class="link" href="${url}">
