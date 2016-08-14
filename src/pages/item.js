@@ -16,24 +16,17 @@ module.exports = function Item (state, prevState, dispatch) {
   const item = storyCollection.get(itemId)
   const comments = commentCollection.get(itemId)
   let pollOptions = pollOptionCollection.get(itemId)
-  let Content = null
 
   if (!item) {
     dispatch('fetchItems', itemId)
-    Content = Loading({ text: 'Loading story...' })
+    return Loading({ text: 'Loading story...' })
   }
 
-  if (!Content && item.type === 'poll' && !pollOptions) {
+  if (item.type === 'poll' && !pollOptions) {
     dispatch('fetchPollOptions', item.id)
-    Content = Loading({ text: 'Loading poll...' })
-  } else if (pollOptions) {
+    return Loading({ text: 'Loading poll...' })
+  } else if (item.type === 'poll' && pollOptions) {
     pollOptions = Array.from(pollOptions.values())
-  }
-
-  if (!Content) {
-    const Story = StoryItem({ item, pollOptions, onLoad: fetchComments })
-    const Comments = comments ? CommentList({ comments }) : Loading({ text: 'Loading comments...' })
-    Content = [ Story, Comments ]
   }
 
   function fetchComments () {
@@ -41,9 +34,10 @@ module.exports = function Item (state, prevState, dispatch) {
     dispatch('fetchComments', item.id)
   }
 
-  return Root(h`<div class="silver">
-      <div class="ph2 ph4-m ph4-ns mt2 mt2-ns mt2-m mt2-l">
-        ${Content}
-      </div>
-  </div>`)
+  const Story = StoryItem({ item, pollOptions, onLoad: fetchComments })
+  const Comments = comments
+    ? CommentList({ comments })
+    : Loading({ text: 'Loading comments...' })
+
+  return Root(h`<div>${[ Story, Comments ]}</div>`)
 }
