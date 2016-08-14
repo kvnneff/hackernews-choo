@@ -1,5 +1,6 @@
 ui: tape
 browserify:
+  - transform: yo-yoify
   - transform: sheetify/transform
   - transform: babelify
 browsers:

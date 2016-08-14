@@ -5,10 +5,9 @@ const PollOptions = require('./poll-options')
 
 const Item = state => {
   const { item, pollOptions, onLoad } = state
-
   return h`<div onload=${onLoad}>
     <a href="${item.url}" class="link">${item.title}</a>
-    ${URL({ item })}
+    ${URL(item)}
     ${InfoBar({ item })}
     ${item.text ? itemText(item.text) : ''}
     ${item.type === 'poll' ? PollOptions({ pollOptions }) : ''}

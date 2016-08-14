@@ -11,8 +11,8 @@ const PollOptions = state => {
       const optionText = h`<span></span>`
       optionText.innerHTML = sanitizeHTML(decode(option.text))
       return h`<li class="mv3">
-        ${optionText}<br>
-        <span class="f6 near-black">${option.score} points</span>
+        <span>${optionText}</span>
+        <span class="f6 near-black dib">${option.score} points</span>
       </li>`
     })
 
