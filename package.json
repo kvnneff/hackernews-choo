@@ -8,8 +8,17 @@
     "deploy": "npm run build && surge dist hackernews-choo.surge.sh",
     "build": "mkdir -p dist && browserify src/index.js -o dist/index.js -t yo-yoify -t sheetify/transform -t babelify -g uglifyify -p [css-extract -o dist/bundle.css] src/index.js",
     "test": "zuul --local 8080 -- test/**/*.js",
-    "test-sauce": "zuul -- test/**/*.js"
+    "test-sauce": "zuul -- test/**/*.js",
+    "write-zuul": "printf \"ui: tape\ntunnel: ngrok\nbrowsers:\n  - name: $BROWSER_NAME\n    version: $BROWSER_VERSION\n\">.zuul.yml",
+    "browser": "npm run write-zuul && zuul --browser-retries 2 -- test"
   },
+  "browserify": {
+    "transforms": [
+      "yo-yoify",
+      "sheetify/transform",
+      "babelify"
+    ]
+  }
   "author": "Kevin Neff",
   "license": "MIT",
   "dependencies": {
@@ -35,6 +44,7 @@
     "tape": "^4.6.0",
     "uglifyify": "^3.0.2",
     "yo-yoify": "^3.4.0",
-    "zuul": "^3.10.3"
+    "zuul": "^3.10.3",
+    "zuul-ngrok": "^4.0.0"
   }
 }
