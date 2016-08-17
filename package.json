@@ -10,7 +10,7 @@
     "test": "zuul --local 8080 -- test/**/*.js",
     "test-sauce": "zuul -- test/**/*.js",
     "write-zuul": "printf \"ui: tape\nbrowsers:\n  - name: $BROWSER_NAME\n    version: $BROWSER_VERSION\n\">.zuul.yml",
-    "browser": "npm run write-zuul && zuul --browser-retries 2 -- test"
+    "browser": "npm run write-zuul && zuul --browser-retries 2 -- test/**/*.js"
   },
   "browserify": {
     "transforms": [
