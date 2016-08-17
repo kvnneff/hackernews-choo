@@ -5,7 +5,7 @@ const PollOptions = require('./poll-options')
 
 const Item = state => {
   const { item, pollOptions, onLoad } = state
-  return h`<div onload=${onLoad}>
+  return h`<div class="Item" onload=${onLoad}>
     <a href="${item.url}" class="link">${item.title}</a>
     ${URL(item)}
     ${InfoBar({ item })}

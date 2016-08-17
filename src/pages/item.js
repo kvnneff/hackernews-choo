@@ -19,12 +19,12 @@ module.exports = function Item (state, prevState, dispatch) {
 
   if (!item) {
     dispatch('fetchItems', itemId)
-    return Loading({ text: 'Loading story...' })
+    return Root(Loading({ text: 'Loading story...' }))
   }
 
   if (item.type === 'poll' && !pollOptions) {
     dispatch('fetchPollOptions', item.id)
-    return Loading({ text: 'Loading poll...' })
+    return Root(Loading({ text: 'Loading poll...' }))
   } else if (item.type === 'poll' && pollOptions) {
     pollOptions = Array.from(pollOptions.values())
   }
@@ -39,5 +39,5 @@ module.exports = function Item (state, prevState, dispatch) {
     ? CommentList({ comments })
     : Loading({ text: 'Loading comments...' })
 
-  return Root(h`<div>${[ Story, Comments ]}</div>`)
+  return Root(h`<div class="ItemPage">${[ Story, Comments ]}</div>`)
 }
