@@ -18,7 +18,7 @@
       "sheetify/transform",
       "babelify"
     ]
-  }
+  },
   "author": "Kevin Neff",
   "license": "MIT",
   "dependencies": {
@@ -44,7 +44,6 @@
     "tape": "^4.6.0",
     "uglifyify": "^3.0.2",
     "yo-yoify": "^3.4.0",
-    "zuul": "^3.10.3",
-    "zuul-ngrok": "^4.0.0"
+    "zuul": "^3.10.3"
   }
 }
