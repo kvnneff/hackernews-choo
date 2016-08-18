@@ -8,7 +8,7 @@
     "deploy": "npm run build && surge dist hackernews-choo.surge.sh",
     "build": "mkdir -p dist && browserify src/index.js -o dist/index.js -t yo-yoify -t sheetify/transform -t babelify -g uglifyify -p [css-extract -o dist/bundle.css] src/index.js",
     "test": "zuul --local 8080 -- test/**/*.js",
-    "test-sauce": "zuul -- test/**/*.js",
+    "test-sauce": "zuul -- test/**/*.js"
   },
   "browserify": {
     "transforms": [
