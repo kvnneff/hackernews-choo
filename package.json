@@ -9,8 +9,6 @@
     "build": "mkdir -p dist && browserify src/index.js -o dist/index.js -t yo-yoify -t sheetify/transform -t babelify -g uglifyify -p [css-extract -o dist/bundle.css] src/index.js",
     "test": "zuul --local 8080 -- test/**/*.js",
     "test-sauce": "zuul -- test/**/*.js",
-    "write-zuul": "printf \"ui: tape\nbrowsers:\n  - name: $BROWSER_NAME\n    version: $BROWSER_VERSION\n\">.zuul.yml",
-    "browser": "npm run write-zuul && zuul --browser-retries 2 -- test/**/*.js"
   },
   "browserify": {
     "transforms": [
@@ -38,8 +36,6 @@
     "budo": "git://github.com/mattdesl/budo.git#9199226",
     "component-emitter": "^1.2.1",
     "css-extract": "^1.1.1",
-    "opn": "^4.0.2",
-    "opn-cli": "^3.1.0",
     "surge": "^0.18.0",
     "tape": "^4.6.0",
     "uglifyify": "^3.0.2",
