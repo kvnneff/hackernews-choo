@@ -1,16 +1,6 @@
 const Test = require('tape')
 const InfoBar = require('../../src/components/info-bar')
-
-const itemFixture = () => {
-  return {
-    time: new Date().getTime() / 1000,
-    type: 'story',
-    score: 10,
-    by: 'Foo',
-    id: 1,
-    descendants: 1
-  }
-}
+const itemFixture = require('../fixtures/item')
 
 Test('InfoBar Component', (t) => {
   const test = t.test

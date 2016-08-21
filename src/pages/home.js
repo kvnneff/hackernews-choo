@@ -17,6 +17,8 @@ const Home = (state, prevState, dispatch) => {
   const prevPageNumber = prevParams
     ? parseInt(prevState.params.pageNumber, 10) || 1
     : 1
+  let ListView
+  let NavigationView
 
   // Load stories if this is a new page
   if (prevPageNumber !== parseInt(pageNumber, 10)) {
@@ -35,13 +37,19 @@ const Home = (state, prevState, dispatch) => {
     })
   }
 
-  return Root(h`<div class="silver" onload=${loadStories}>
-    <div>
-      ${isLoadingItems
-        ? LoadingView()
-        : ItemList({ collection, storiesPerPage, pageNumber })}
-    </div>
-    ${isLoadingItems ? '' : Navigation({ pageNumber })}
+  if (isLoadingItems) {
+    ListView = LoadingView()
+    NavigationView = ''
+  } else {
+    ListView = ItemList({ collection, storiesPerPage, pageNumber })
+    NavigationView = Navigation({ pageNumber })
+  }
+
+  return Root(h`<div class="HomePage silver" onload=${loadStories}>
+    ${[
+      ListView,
+      NavigationView
+    ]}
   </div>`)
 }
 

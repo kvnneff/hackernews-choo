@@ -1,17 +1,6 @@
 const Test = require('tape')
 const Item = require('../../src/components/item-list/item')
-
-const itemFixture = () => {
-  return {
-    time: new Date().getTime() / 1000,
-    by: 'Foo',
-    title: 'Bar',
-    id: 1,
-    text: 'Baz',
-    url: 'https://test.com',
-    descendants: 2
-  }
-}
+const itemFixture = require('../fixtures/item')
 
 Test('ItemList-Item Component', (t) => {
   const test = t.test

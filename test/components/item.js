@@ -1,28 +1,7 @@
 const Test = require('tape')
 const Item = require('../../src/components/item/index')
-
-const itemFixture = () => {
-  return {
-    time: new Date().getTime() / 1000,
-    by: 'Foo',
-    title: 'Bar',
-    id: 1,
-    text: 'Baz',
-    url: 'https://test.com',
-    descendants: 2,
-    type: 'story'
-  }
-}
-
-const optionsFixture = () => {
-  return [{
-    text: 'Foo',
-    score: 1
-  }, {
-    text: 'Bar',
-    score: 2
-  }]
-}
+const itemFixture = require('../fixtures/item')
+const pollOptionsFixture = require('../fixtures/poll-options')
 
 Test('Item Component', (t) => {
   const test = t.test
@@ -67,7 +46,7 @@ Test('Item Component', (t) => {
   test('displays poll options if item type is poll', (t) => {
     t.plan(1)
     const item = itemFixture()
-    const pollOptions = optionsFixture()
+    const pollOptions = pollOptionsFixture()
     item.type = 'poll'
     const itemEl = Item({ item, pollOptions })
     const pollOptionsEl = itemEl.children[4]

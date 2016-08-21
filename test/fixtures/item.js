@@ -7,7 +7,8 @@ const itemFixture = () => {
     text: 'Baz',
     url: 'https://test.com',
     descendants: 2,
-    type: 'story'
+    type: 'story',
+    score: 10
   }
 }
 
