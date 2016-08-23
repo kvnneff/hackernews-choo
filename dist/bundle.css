@@ -1,4 +1,13 @@
-._2132c44c .ball-pulse > div {
+._d72cc462 > li {
+    padding: 1rem;
+    margin: 2rem 0;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+  }
+
+  ._d72cc462 > li:nth-child(even) {
+    background-color: #fefefe;
+  }._2132c44c .ball-pulse > div {
     background-color: #006C71;
   }._90a79e81 {
     position: absolute;
@@ -4292,15 +4301,4 @@ pre {
   overflow: auto;
   max-width: 600px;
   background: #f4f4f4;
-}
-
-.comment-list > li {
-  padding: 1rem;
-  margin: 2rem 0;
-  background-color: #f4f4f4;
-  border: 1px solid #ccc;
-}
-
-.comment-list > li:nth-child(even) {
-  background-color: #fefefe;
 }

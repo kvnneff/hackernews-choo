@@ -19,6 +19,7 @@
   },
   "author": "Kevin Neff",
   "license": "MIT",
+  "repository": "https://github.com/kvnneff/hackernews-choo",
   "dependencies": {
     "approximate-time": "0.0.1",
     "choo": "^3.2.0",

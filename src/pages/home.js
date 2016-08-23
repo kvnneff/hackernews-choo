@@ -64,7 +64,7 @@ const Navigation = (state) => {
 
   if (pageNumber > 1) navEl = h`<span><a href="/page/${ pageNumber - 1 }">Previous</a> | ${moreEl}</span>`
 
-  return h`<div class="w-100">
+  return h`<div class="w-100 mt4">
     ${navEl}
   </div>`
 }
