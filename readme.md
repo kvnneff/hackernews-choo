@@ -1,6 +1,6 @@
 # hackernews-choo [![Build Status](https://travis-ci.org/kvnneff/hackernews-choo.svg?branch=master)](https://travis-ci.org/kvnneff/hackernews-choo)
 
-A rough Hacker News reader built to experiment with [Choo](https://github.com/yoshuawuyts/choo).
+A Hacker News reader built to demonstrate [Choo](https://github.com/yoshuawuyts/choo).
 
 [View online](https://hackernews-choo.surge.sh).
 
